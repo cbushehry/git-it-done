@@ -1,4 +1,4 @@
-# GIT-IT-DONE
+# GIT IT DONE
 
 ## 1. Description
 This application was designed to make it easier for the user to browse repositories with open issues on github. The user can search any user on Github and wil get a list of all their repositories
@@ -25,4 +25,3 @@ This application was made by Cameron Bushehry
 
   [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cbushehry)
   [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:c.bushehry@gmail.com)
-
