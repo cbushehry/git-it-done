@@ -43,9 +43,7 @@ var getUserRepos = function(user) {
     .then(function(response) {
       // request was successful
       if (response.ok) {
-        console.log(response);
         response.json().then(function(data) {
-          console.log(data);
           displayRepos(data, user);
         });
       } else {
@@ -90,7 +88,7 @@ var displayRepos = function(repos, searchTerm) {
 
     // create a link for each repo
     var repoEl = document.createElement("a");
-    repoEl.classList = "list-item flex-row justify-space-between align-center";
+    repoEl.classList.add("list-item", "flex-row", "justify-space-between", "align-center");
     repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);
 
     // create a span element to hold repository name
@@ -102,7 +100,7 @@ var displayRepos = function(repos, searchTerm) {
 
     // create a status element
     var statusEl = document.createElement("span");
-    statusEl.classList = "flex-row align-center";
+    statusEl.classList.add("flex-row", "align-center");
 
     // check if current repo has issues or not
     if (repos[i].open_issues_count > 0) {
