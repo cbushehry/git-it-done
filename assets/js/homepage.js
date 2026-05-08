@@ -1,15 +1,15 @@
-var userFormEl = document.querySelector("#user-form");
-var languageButtonsEl = document.querySelector("#language-buttons");
-var nameInputEl = document.querySelector("#username");
-var repoContainerEl = document.querySelector("#repos-container");
-var repoSearchTerm = document.querySelector("#repo-search-term");
+const userFormEl = document.querySelector("#user-form");
+const languageButtonsEl = document.querySelector("#language-buttons");
+const nameInputEl = document.querySelector("#username");
+const repoContainerEl = document.querySelector("#repos-container");
+const repoSearchTerm = document.querySelector("#repo-search-term");
 
-var formSubmitHandler = function(event) {
+const formSubmitHandler = function(event) {
   // prevent page from refreshing
   event.preventDefault();
 
   // get value from input element
-  var username = nameInputEl.value.trim();
+  const username = nameInputEl.value.trim();
 
   if (username) {
     getUserRepos(username);
@@ -22,9 +22,9 @@ var formSubmitHandler = function(event) {
   }
 };
 
-var buttonClickHandler = function(event) {
+const buttonClickHandler = function(event) {
   // get the language attribute from the clicked element
-  var language = event.target.getAttribute("data-language");
+  const language = event.target.getAttribute("data-language");
 
   if (language) {
     getFeaturedRepos(language);
@@ -34,9 +34,9 @@ var buttonClickHandler = function(event) {
   }
 };
 
-var getUserRepos = function(user) {
+const getUserRepos = function(user) {
   // format the github api url
-  var apiUrl = "https://api.github.com/users/" + user + "/repos";
+  const apiUrl = "https://api.github.com/users/" + user + "/repos";
 
   // make a get request to url
   fetch(apiUrl)
@@ -55,9 +55,9 @@ var getUserRepos = function(user) {
     });
 };
 
-var getFeaturedRepos = function(language) {
+const getFeaturedRepos = function(language) {
   // format the github api url
-  var apiUrl = "https://api.github.com/search/repositories?q=" + language + "+is:featured&sort=help-wanted-issues";
+  const apiUrl = "https://api.github.com/search/repositories?q=" + language + "+is:featured&sort=help-wanted-issues";
 
   // make a get request to url
   fetch(apiUrl).then(function(response) {
@@ -72,7 +72,7 @@ var getFeaturedRepos = function(language) {
   });
 };
 
-var displayRepos = function(repos, searchTerm) {
+const displayRepos = function(repos, searchTerm) {
   // check if api returned any repos
   if (repos.length === 0) {
     repoContainerEl.textContent = "No repositories found.";
@@ -82,24 +82,24 @@ var displayRepos = function(repos, searchTerm) {
   repoSearchTerm.textContent = searchTerm;
 
   // loop over repos
-  for (var i = 0; i < repos.length; i++) {
+  for (let i = 0; i < repos.length; i++) {
     // format repo name
-    var repoName = repos[i].owner.login + "/" + repos[i].name;
+    const repoName = repos[i].owner.login + "/" + repos[i].name;
 
     // create a link for each repo
-    var repoEl = document.createElement("a");
+    const repoEl = document.createElement("a");
     repoEl.classList.add("list-item", "flex-row", "justify-space-between", "align-center");
     repoEl.setAttribute("href", "./single-repo.html?repo=" + repoName);
 
     // create a span element to hold repository name
-    var titleEl = document.createElement("span");
+    const titleEl = document.createElement("span");
     titleEl.textContent = repoName;
 
     // append to container
     repoEl.appendChild(titleEl);
 
     // create a status element
-    var statusEl = document.createElement("span");
+    const statusEl = document.createElement("span");
     statusEl.classList.add("flex-row", "align-center");
 
     // check if current repo has issues or not
