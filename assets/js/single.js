@@ -4,8 +4,7 @@ const limitWarningEl = document.querySelector("#limit-warning");
 
 const getRepoName = function() {
   // grab repo name from url query string
-  const queryString = document.location.search;
-  const repoName = queryString.split("=")[1];
+  const repoName = new URLSearchParams(document.location.search).get("repo");
 
   if (repoName) {
     // display repo name on the page
