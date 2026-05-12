@@ -494,3 +494,14 @@ p {
     flex: 0 0 100%;
   }
 }
+
+.username-error {
+  color: #c0392b;
+  font-size: 0.875rem;
+  margin: 4px 0 0;
+}
+
+.repos-error {
+  color: #c0392b;
+  padding: 12px 0;
+}
