@@ -78,6 +78,8 @@ const getFeaturedRepos = function(language) {
     } else {
       showRepoError("Error: " + response.statusText);
     }
+  }).catch(function(error) {
+    showRepoError("Unable to connect to GitHub");
   });
 };
 
