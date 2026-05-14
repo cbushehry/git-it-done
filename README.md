@@ -1,6 +1,6 @@
 # GIT IT DONE
 
-This application was designed to make it easier for the user to browse repositories with open issues on github. The user can search any user on Github and wil get a list of all their repositories
+A GitHub repository browser that lets you search for open issues by username or programming language. Search any GitHub user to see all their repositories with open issue counts, or click a language button to discover featured repos sorted by help-wanted issues.
 
 
 <img src="assets/images/git-it-done.jpg" width="34%" height="auto"/>
@@ -9,15 +9,19 @@ This application was designed to make it easier for the user to browse repositor
  [DIRECT LINK](https://cbushehry.github.io/git-it-done/) | [GITHUB REPOSITORY](https://github.com/cbushehry/git-it-done)
 
 ## Features
- * Search any user on Github, for a list of all repositories
- * Click on any repository to see a list of all current unfinished 'Issues'
- * Direct links to the Github user from the currently unfinished 'Issues'
+ * Search any GitHub username to see all of their public repositories with open issue counts
+ * Search by language topic (JavaScript, HTML, or CSS) to see featured repositories sorted by help-wanted issues
+ * Click any repository to view its full list of open issues and pull requests
+ * Issues are labeled as either `(Issue)` or `(Pull request)` for easy distinction
+ * Direct links from each issue to its corresponding GitHub page
+ * Pagination warning displayed when a repository has more than 30 issues
 
 ## Tech Stack
  * HTML
  * CSS
  * JavaScript
- * JQuery
+ * GitHub REST API
+ * Font Awesome
 
 ## Credits / Contact
 This application was made by Cameron Bushehry
